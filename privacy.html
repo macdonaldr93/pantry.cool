@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Pantry</title>
+  <meta name="description" content="Pantry's privacy policy. No account, no tracking pixels, no data resale. Your bookmarks and notes stay in your browser and sync via Chrome only." />
+  <link rel="canonical" href="https://pantry.cool/privacy.html" />
+  <meta name="theme-color" content="#fbf3e6" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png" />
+  <link rel="icon" type="image/png" sizes="128x128" href="/assets/icon-128.png" />
+  <link rel="apple-touch-icon" href="/assets/icon-512.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <img src="/assets/icon-128.png" alt="" width="34" height="34" />
+        Pantry
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="/#features">Features</a>
+          <a href="/#creators">For creators</a>
+          <a href="/#works-on">Works on</a>
+          <a href="/support.html">Support</a>
+          <a class="btn" href="https://chromewebstore.google.com/detail/recipe-box/lcfhmcjffbgobdkdhnmmglogcbfkccpc">Add to Chrome</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Privacy</p>
+        <h1>Privacy Policy</h1>
+        <p class="lead">The short version: there's no account, nothing about your recipes is sent to us, and you can turn off the only thing we measure. Here's the long version.</p>
+        <p class="updated">Last updated 24 May 2026</p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="wrap">
+        <div class="prose">
+          <div class="callout">
+            <p><strong>In one breath:</strong> Pantry has no accounts and no backend for your data. Your saved recipes and notes live in your own browser and sync through Chrome Sync — Google's infrastructure, not ours. We never receive them.</p>
+          </div>
+
+          <h2>What Pantry stores</h2>
+          <p>Everything Pantry saves is kept in <code>chrome.storage.sync</code>, which is synchronized across the Chrome browsers you're signed into. None of it is transmitted to Pantry or any third party.</p>
+          <table>
+            <thead>
+              <tr><th>What</th><th>Why</th><th>Where it lives</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Your "Recipes" bookmark folder ID</td><td>So saved recipes always land in the same folder</td><td>Your browser (Chrome Sync)</td></tr>
+              <tr><td>Feature toggles (e.g. ingredient hints)</td><td>To remember your settings</td><td>Your browser (Chrome Sync)</td></tr>
+              <tr><td>Your per-recipe notes</td><td>The notes you write in the side panel</td><td>Your browser (Chrome Sync), compressed</td></tr>
+              <tr><td>Bookmarks themselves</td><td>The recipes you save</td><td>Your normal Chrome bookmarks</td></tr>
+            </tbody>
+          </table>
+          <p>Because your recipes are saved as ordinary Chrome bookmarks, they sync to mobile Chrome, are searchable from the address bar, and remain in your browser even if you uninstall Pantry.</p>
+
+          <h2>What we measure</h2>
+          <p>To understand whether Pantry is useful, we collect a small amount of <strong>anonymous</strong> usage data — for example, how often the popup is opened and how many recipes get bookmarked. This data is not linked to your identity and never includes the contents of pages you visit, the recipes you save, or the notes you write.</p>
+          <div class="callout">
+            <p><strong>You can turn this off.</strong> Open Pantry's options page and toggle off analytics. When opted out, no usage events are sent at all.</p>
+          </div>
+
+          <h2>What we never do</h2>
+          <ul>
+            <li>No account, login, or email is ever required.</li>
+            <li>We never send your bookmarks, notes, or browsing history to our servers — we don't have a server that receives them.</li>
+            <li>No tracking pixels and no advertising networks.</li>
+            <li>We never sell or share your data.</li>
+            <li>We don't strip ads, block trackers, or alter the recipe blogs you visit — those pages load exactly as their creators built them.</li>
+          </ul>
+
+          <h2>Permissions, and why Pantry asks for them</h2>
+          <p>Chrome requires extensions to declare the capabilities they use. Here's each one Pantry requests and the single reason it needs it.</p>
+          <table>
+            <thead>
+              <tr><th>Permission</th><th>Why Pantry needs it</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>bookmarks</code></td><td>Create and maintain a sorted "Recipes" folder of the recipes you save.</td></tr>
+              <tr><td><code>storage</code></td><td>Remember your Recipes folder, feature toggles, and per-recipe notes (synced via Chrome Sync).</td></tr>
+              <tr><td><code>sidePanel</code></td><td>Open the side-panel UI for the recipe notes editor.</td></tr>
+              <tr><td><code>tabs</code></td><td>Read the active tab's URL and title to attach notes to the right page and refresh on navigation.</td></tr>
+              <tr><td>Host access (<code>http</code>/<code>https</code>)</td><td>Detect recipe content and run auto-scroll, ingredient tooltips, and bookmarking on the recipe blogs you visit. Pantry only adds scroll position, tooltips, and its own toolbar UI — it does not modify the page's content.</td></tr>
+            </tbody>
+          </table>
+
+          <h2>Third parties</h2>
+          <p>Two third parties are involved, and only in limited ways:</p>
+          <ul>
+            <li><strong>Google Chrome Sync</strong> stores and syncs your settings and notes across your devices, under Google's own privacy terms. Pantry never sees this data flow.</li>
+            <li><strong>Anonymous analytics</strong> (used only when you haven't opted out) processes the non-identifying usage events described above.</li>
+          </ul>
+
+          <h2>Children</h2>
+          <p>Pantry is a general-audience tool and is not directed at children under 13. It collects no personal information from anyone.</p>
+
+          <h2>Changes</h2>
+          <p>If this policy changes, we'll update the date at the top of this page. Material changes will also be noted in the extension's release notes.</p>
+
+          <h2>Contact</h2>
+          <p>Questions about privacy? Email <a href="mailto:hello@pantry.cool">hello@pantry.cool</a> — replies usually come within a day.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="brand-col">
+        <a class="brand" href="/">
+          <img src="/assets/icon-128.png" alt="" width="34" height="34" />
+          Pantry
+        </a>
+        <p>The friendly way to skip the filler on recipe blogs — and keep the recipes you love. Free, and fair to the people who write them.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#how">How it works</a></li>
+          <li><a href="/#works-on">Works on</a></li>
+          <li><a href="https://chromewebstore.google.com/detail/recipe-box/lcfhmcjffbgobdkdhnmmglogcbfkccpc">Add to Chrome</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>More</h4>
+        <ul>
+          <li><a href="/support.html">Support</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="mailto:hello@pantry.cool">hello@pantry.cool</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <span>© <span data-year>2026</span> Pantry. Made for people who cook.</span>
+      <span>pantry.cool</span>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

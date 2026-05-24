@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pantry — Skip the Story. Save the Recipe.</title>
+  <meta name="description" content="Skip the story. Save the recipe. Pantry jumps to the recipe on any food blog and saves it to your Chrome bookmarks — no account, syncs to your phone." />
+  <link rel="canonical" href="https://pantry.cool/" />
+  <meta name="theme-color" content="#fbf3e6" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Pantry" />
+  <meta property="og:title" content="Pantry — Skip the Story. Save the Recipe." />
+  <meta property="og:description" content="Pantry jumps to the recipe on any food blog and saves it to your Chrome bookmarks — no account, syncs to your phone." />
+  <meta property="og:url" content="https://pantry.cool/" />
+  <meta property="og:image" content="https://pantry.cool/assets/icon-512.png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Pantry — Skip the Story. Save the Recipe." />
+  <meta name="twitter:description" content="Jump to the recipe on any food blog and save it to your Chrome bookmarks. No account. Syncs to your phone." />
+  <meta name="twitter:image" content="https://pantry.cool/assets/icon-512.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png" />
+  <link rel="icon" type="image/png" sizes="128x128" href="/assets/icon-128.png" />
+  <link rel="apple-touch-icon" href="/assets/icon-512.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script>document.documentElement.classList.remove('no-js');</script>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Pantry",
+    "applicationCategory": "BrowserApplication",
+    "operatingSystem": "Chrome",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Pantry jumps to the recipe on any food blog and saves it to your Chrome bookmarks — no account, syncs to your phone.",
+    "url": "https://pantry.cool/"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <img src="/assets/icon-128.png" alt="" width="34" height="34" />
+        Pantry
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#features">Features</a>
+          <a href="#creators">For creators</a>
+          <a href="#works-on">Works on</a>
+          <a href="/support.html">Support</a>
+          <a class="btn" href="https://chromewebstore.google.com/detail/recipe-box/lcfhmcjffbgobdkdhnmmglogcbfkccpc">Add to Chrome</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================================================== HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Free Chrome extension</p>
+          <h1 class="reveal">Skip the <span class="strike">story.</span><br />Save the <span class="pop">recipe.</span></h1>
+          <p class="lead reveal">Pantry jumps straight to the recipe on any food blog, then saves it to your real Chrome bookmarks. No account. Syncs to your phone.</p>
+          <div class="hero-cta reveal">
+            <a class="btn btn--lg" href="https://chromewebstore.google.com/detail/recipe-box/lcfhmcjffbgobdkdhnmmglogcbfkccpc">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+              Add to Chrome — it's free
+            </a>
+            <a class="btn btn--ghost btn--lg" href="#how">See how it works</a>
+          </div>
+          <p class="hero-trust reveal">
+            <span>No account</span>
+            <span>No ads stripped</span>
+            <span>Syncs across devices</span>
+          </p>
+        </div>
+
+        <!-- Live "skip the story" demo -->
+        <div class="hero-visual reveal">
+          <div class="demo" data-demo aria-hidden="true">
+            <div class="demo-bar">
+              <i></i><i></i><i></i>
+              <span class="url">grandmas-best-pasta.blog</span>
+            </div>
+            <div class="demo-body">
+              <p class="story-label">The story</p>
+              <div class="story">
+                <p></p><p></p><p></p><p></p><p></p>
+              </div>
+              <div class="skip-pill">↓ Skipped the story</div>
+              <div class="recipe-card">
+                <h4>
+                  Weeknight Tomato Pasta
+                  <span class="heart" title="Saved to bookmarks">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.9-10-9.1C.4 9 1.3 5.7 4.2 4.8c2-.6 3.9.3 4.8 1.9.9-1.6 2.8-2.5 4.8-1.9 2.9.9 3.8 4.2 2.2 7.1C19.5 16.1 12 21 12 21z"/></svg>
+                  </span>
+                </h4>
+                <ul>
+                  <li>2 tbsp <span class="hint">olive oil</span>, divided</li>
+                  <li>1 lb spaghetti</li>
+                  <li>4 cloves garlic, sliced</li>
+                  <li>1 can San Marzano tomatoes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== PULL QUOTE -->
+    <section class="band-cream">
+      <div class="wrap quote-wrap">
+        <p class="eyebrow" style="justify-content:center">What people want</p>
+        <blockquote class="bigquote">
+          Finally, I don't need to read an essay before knowing if I should store a tomato in the fridge or not.
+        </blockquote>
+        <p class="quote-cite">— a real review of another recipe extension, 2022</p>
+        <p class="quote-note">We built Pantry to be the version of that — with the parts every reviewer asked for: reliable detection, real bookmarks instead of an in-app save, and a place to write your own notes.</p>
+      </div>
+    </section>
+
+    <!-- ================================================ FEATURES -->
+    <section id="features">
+      <div class="wrap">
+        <p class="eyebrow">Why you'll love it</p>
+        <h2>Everything you wish recipe&nbsp;blogs did themselves.</h2>
+        <div class="feature-grid">
+          <article class="feature stitched">
+            <div class="ico" aria-hidden="true">🔖</div>
+            <h3>Yours forever</h3>
+            <p>Recipes save to your real Chrome bookmarks — not a SaaS database. They sync to mobile, search from the omnibox, and stay with you even if you uninstall Pantry.</p>
+          </article>
+          <article class="feature stitched">
+            <div class="ico" aria-hidden="true">🥬</div>
+            <h3>Skip the story</h3>
+            <p>Auto-scrolls past the preamble straight to the recipe the moment the page loads. No hunting for the "Jump to Recipe" link.</p>
+          </article>
+          <article class="feature stitched">
+            <div class="ico" aria-hidden="true">✅</div>
+            <h3>One-click bookmark</h3>
+            <p>Saved into a tidy, alphabetically sorted "Recipes" folder. No manual filing, no mess — it stays organized for you.</p>
+          </article>
+          <article class="feature stitched">
+            <div class="ico" aria-hidden="true">🍅</div>
+            <h3>Ingredient cheat sheet</h3>
+            <p>Hover any ingredient in the instructions to see the full line — "2 tbsp olive oil, divided" — without scrolling back up to the list.</p>
+          </article>
+          <article class="feature stitched">
+            <div class="ico" aria-hidden="true">📝</div>
+            <h3>Recipe notes</h3>
+            <p>A side panel for substitutions, tweaks, and what you'd do differently next time. Auto-saves and syncs across your Chrome browsers.</p>
+          </article>
+          <article class="feature stitched">
+            <div class="ico" aria-hidden="true">🔗</div>
+            <h3>Deep links</h3>
+            <p>Bookmarks remember the recipe's exact position on the page, so revisiting jumps you right back to the good part.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================= FAIR TO CREATORS -->
+    <section id="creators" class="creators">
+      <div class="wrap">
+        <div class="creators-intro">
+          <p class="eyebrow">Fair to creators</p>
+          <h2>We don't break the blogs you love.</h2>
+          <p class="lead">Recipe blogs are how a lot of people make a living — and a lot of those recipes are great because the people writing them care. Pantry helps you find the part you came for. It doesn't take anything away from the people who made it.</p>
+          <p>If you love a blog, keep visiting it. We just make it less of a slog.</p>
+        </div>
+        <div class="panel stitched">
+          <ul>
+            <li class="no">
+              <span class="mark" aria-hidden="true">✕</span>
+              <span><b>No stripping ads.</b> The page loads exactly as the creator built it. Ads run normally.</span>
+            </li>
+            <li class="no">
+              <span class="mark" aria-hidden="true">✕</span>
+              <span><b>No extracting recipes.</b> We never lift the recipe off the page or republish it elsewhere.</span>
+            </li>
+            <li>
+              <span class="mark" aria-hidden="true">✓</span>
+              <span><b>Just scroll &amp; augment.</b> We add tools on top of the page — a scroll, a tooltip, a notes panel. Nothing else.</span>
+            </li>
+            <li>
+              <span class="mark" aria-hidden="true">✓</span>
+              <span><b>The author still gets paid.</b> Their work, their traffic, their ad revenue — all intact.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= HOW IT WORKS -->
+    <section id="how" class="band-cream">
+      <div class="wrap">
+        <p class="eyebrow">How it works</p>
+        <h2>Four steps. No setup.</h2>
+        <div class="steps">
+          <article class="step stitched">
+            <h3>Install Pantry</h3>
+            <p>Add it from the Chrome Web Store and open any recipe blog. There's nothing to configure.</p>
+          </article>
+          <article class="step stitched">
+            <h3>Land on the recipe</h3>
+            <p>The page auto-scrolls straight to the recipe — no clicking "Jump to Recipe."</p>
+          </article>
+          <article class="step stitched">
+            <h3>Bookmark or note it</h3>
+            <p>Click the toolbar icon to save it, or open "My Notes" to jot down your tweaks.</p>
+          </article>
+          <article class="step stitched">
+            <h3>Come back anytime</h3>
+            <p>Your bookmarks and notes are right where you left them, on every device signed into Chrome.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================ WORKS ON -->
+    <section id="works-on" class="band-ink works">
+      <div class="wrap">
+        <p class="eyebrow">Works on</p>
+        <h2>The sites you actually read.</h2>
+        <p class="lead" style="color:var(--paper);max-width:54ch">Pantry works on basically every recipe site that uses standard recipe markup — big publishers, indie blogs powered by recipe plugins, and the major regional sites.</p>
+        <div class="cols">
+          <div class="col">
+            <h3>Big publishers</h3>
+            <div class="chips">
+              <span class="chip">NYT Cooking</span><span class="chip">Food Network</span><span class="chip">AllRecipes</span><span class="chip">Bon Appétit</span><span class="chip">Epicurious</span><span class="chip">Serious Eats</span><span class="chip">Food52</span><span class="chip">King Arthur Baking</span><span class="chip">BBC Good Food</span><span class="chip">The Kitchn</span>
+            </div>
+          </div>
+          <div class="col">
+            <h3>Indie blogs</h3>
+            <div class="chips">
+              <span class="chip">Smitten Kitchen</span><span class="chip">Pinch of Yum</span><span class="chip">Sally's Baking Addiction</span><span class="chip">Half Baked Harvest</span><span class="chip">Cookie and Kate</span><span class="chip">Minimalist Baker</span><span class="chip">Budget Bytes</span><span class="chip">RecipeTin Eats</span><span class="chip">The Pioneer Woman</span>
+            </div>
+          </div>
+          <div class="col">
+            <h3>Regional &amp; plugins</h3>
+            <div class="chips">
+              <span class="chip">Ricardo Cuisine</span><span class="chip">Marmiton</span><span class="chip">Chefkoch</span><span class="chip">Cookpad</span><span class="chip">WPRM</span><span class="chip">Tasty Recipes</span><span class="chip">Mediavine Create</span><span class="chip">+ JSON-LD fallback</span>
+            </div>
+          </div>
+        </div>
+        <p class="works-foot">A site not working? <a href="/support.html">Tell us and we'll add coverage.</a></p>
+      </div>
+    </section>
+
+    <!-- ================================================= PRIVACY -->
+    <section class="privacy-strip">
+      <div class="wrap">
+        <div>
+          <p class="eyebrow">Privacy by default</p>
+          <h2>Your recipes never touch our&nbsp;servers.</h2>
+          <p class="lead">There's no account because there's nothing to sign in to. Everything lives in your browser and syncs through Chrome — never through us.</p>
+          <a class="link-arrow" href="/privacy.html">Read the full privacy policy <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="privacy-list stitched" style="padding:var(--s-6)">
+          <li>No account required, ever.</li>
+          <li>Bookmarks &amp; notes stay in your browser — synced via Chrome Sync only.</li>
+          <li>No tracking pixels, no ad networks, no data resale.</li>
+          <li>Anonymous usage stats only, fully opt-out from settings.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =============================================== FINAL CTA -->
+    <section class="final">
+      <div class="wrap">
+        <div class="panel stitched">
+          <p class="eyebrow" style="justify-content:center">Ready when you are</p>
+          <h2>Skip the story. Save the recipe.</h2>
+          <p class="lead">No account. Works on every recipe blog we've tried.</p>
+          <div class="hero-cta">
+            <a class="btn btn--lg" href="https://chromewebstore.google.com/detail/recipe-box/lcfhmcjffbgobdkdhnmmglogcbfkccpc">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+              Add Pantry to Chrome
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =================================================== FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="brand-col">
+        <a class="brand" href="/">
+          <img src="/assets/icon-128.png" alt="" width="34" height="34" />
+          Pantry
+        </a>
+        <p>The friendly way to skip the filler on recipe blogs — and keep the recipes you love. Free, and fair to the people who write them.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#works-on">Works on</a></li>
+          <li><a href="https://chromewebstore.google.com/detail/recipe-box/lcfhmcjffbgobdkdhnmmglogcbfkccpc">Add to Chrome</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>More</h4>
+        <ul>
+          <li><a href="/support.html">Support</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="mailto:hello@pantry.cool">hello@pantry.cool</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <span>© <span data-year>2026</span> Pantry. Made for people who cook.</span>
+      <span>pantry.cool</span>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
