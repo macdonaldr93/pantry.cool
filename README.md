@@ -41,6 +41,19 @@ python3 -m http.server 8000
 # then visit http://localhost:8000
 ```
 
+## Regenerate the OG image
+
+`assets/og.png` (1200×630) is a screenshot of `assets/og-source.html`. To rebuild it
+after editing the source, serve the repo and capture the page at scale 1:
+
+```sh
+python3 -m http.server 8000   # then, in another shell, with a headless browser:
+# load http://localhost:8000/assets/og-source.html at 1200×630 and screenshot to assets/og.png
+```
+
+Any headless Chromium works (Playwright, Puppeteer, `chrome --headless --screenshot`).
+Keep the output exactly 1200×630 so it matches the `og:image:width/height` tags.
+
 ## Deploy (GitHub Pages)
 
 1. Push to the default branch.
@@ -62,8 +75,8 @@ These are intentionally stubbed to the values the marketing docs specify; swap w
 - **Logo / favicon** reuse the existing red *recipe-book* icon from the extension. A
   Pantry-specific mark is a likely follow-up; replace the files in `assets/` and the
   `og:image` will update with them.
-- **OG/Twitter image** currently uses the square 512px icon. A dedicated 1200×630
-  share image is a nice-to-have for richer link previews.
+- **Social share image** is `assets/og.png` (1200×630), rendered from
+  `assets/og-source.html`. Regenerate it after any brand/copy change (see below).
 - **Fonts** load from the Google Fonts CDN. To match the extension's no-tracking
   ethos exactly, self-host the two families under `assets/fonts/` and swap the
   `<link>` for an `@font-face` block.
