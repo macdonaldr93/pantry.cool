@@ -240,14 +240,14 @@ section { position: relative; z-index: 1; padding-block: clamp(4.5rem, 8vw, 9.5r
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-family: var(--display);
-  font-weight: 900;
-  font-size: 1.4rem;
+  font-family: "Instrument Serif", var(--display);
+  font-weight: 400;
+  font-size: 2.5rem;
   color: var(--ink);
   text-decoration: none;
   letter-spacing: -0.02em;
 }
-.brand img { width: 34px; height: 34px; }
+.brand img { width: 44px; height: 44px; }
 .nav { display: flex; align-items: center; gap: var(--s-5); }
 .nav a {
   color: var(--ink);
