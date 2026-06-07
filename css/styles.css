@@ -256,6 +256,7 @@ section { position: relative; z-index: 1; padding-block: clamp(4.5rem, 8vw, 9.5r
   font-size: 0.98rem;
 }
 .nav a:not(.btn):hover { color: var(--tomato-deep); }
+.nav a.btn { color: #fff; }
 .nav-links { display: flex; gap: var(--s-5); align-items: center; }
 
 .nav-toggle { display: none; }
