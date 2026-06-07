@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Pantry</title>
+  <meta name="description" content="You've installed Pantry. Here's everything it can do for you." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#fbf3e6" />
+
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png" />
+  <link rel="icon" type="image/png" sizes="128x128" href="/assets/icon-128.png" />
+  <link rel="apple-touch-icon" href="/assets/icon-512.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script>document.documentElement.classList.remove('no-js');</script>
+
+  <style>
+    /* --------------------------------------------------------- Pin toast */
+    .pin-toast {
+      position: fixed;
+      top: 10px;
+      right: 45px;
+      z-index: 200;
+      width: min(310px, calc(100vw - 32px));
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: var(--r-lg);
+      padding: var(--s-5);
+      box-shadow: var(--shadow-lg);
+      animation: toastIn 0.5s var(--ease) 1s both;
+    }
+    /* Arrow pointing up toward the Chrome extensions area */
+    .pin-toast::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      left: 34px;
+      width: 0; height: 0;
+      border: 8px solid transparent;
+      border-top: 0;
+      border-bottom-color: var(--ink);
+    }
+    .pin-toast-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--s-3);
+      margin-bottom: var(--s-3);
+    }
+    .pin-toast-title {
+      font-family: var(--body);
+      font-weight: 800;
+      font-size: 0.93rem;
+      color: var(--paper);
+      margin: 0;
+      line-height: 1.3;
+    }
+    .pin-toast-dismiss {
+      background: none;
+      border: 0;
+      cursor: pointer;
+      color: color-mix(in srgb, var(--paper) 55%, transparent);
+      font-size: 1.1rem;
+      line-height: 1;
+      padding: 0;
+      flex: none;
+      transition: color 0.15s;
+    }
+    .pin-toast-dismiss:hover { color: var(--paper); }
+    .pin-steps {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: var(--s-2);
+    }
+    .pin-steps li {
+      display: flex;
+      align-items: center;
+      gap: var(--s-2);
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: color-mix(in srgb, var(--paper) 88%, transparent);
+    }
+    .pin-steps .sn {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--tomato-deep);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 0.68rem;
+      font-weight: 900;
+      flex: none;
+    }
+    .pin-toast.dismissed {
+      animation: toastOut 0.3s var(--ease) forwards;
+      pointer-events: none;
+    }
+    .no-js .pin-toast { animation: none; opacity: 1; transform: none; }
+
+    /* -------------------------------------------------- Welcome hero */
+    .install-hero {
+      padding-top: clamp(var(--s-7), 6vw, var(--s-9));
+      padding-bottom: 0;
+      text-align: center;
+    }
+    .install-hero .wrap { max-width: 680px; }
+    .install-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45em;
+      background: color-mix(in srgb, var(--herb) 13%, var(--paper));
+      color: var(--herb-deep);
+      border: 1.5px solid color-mix(in srgb, var(--herb) 32%, var(--paper));
+      border-radius: var(--r-pill);
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4em 1.1em;
+      margin-bottom: var(--s-5);
+    }
+    .install-hero h1 {
+      font-size: clamp(2.5rem, 1.2rem + 5vw, 4.75rem);
+      margin-bottom: var(--s-4);
+    }
+    .install-hero .lead {
+      max-width: 50ch;
+      margin-inline: auto;
+    }
+    .install-trust {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--s-2) var(--s-5);
+      margin-top: var(--s-5);
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      font-weight: 600;
+    }
+    .install-trust span { display: inline-flex; align-items: center; gap: 0.4em; }
+    .install-trust span::before { content: "✓"; color: var(--herb); font-weight: 900; }
+
+    /* ------------------------------------------------- Pin section */
+    .pin-section { padding-bottom: 0; }
+    .pin-card {
+      max-width: 680px;
+      margin-inline: auto;
+      padding: clamp(var(--s-6), 4vw, var(--s-8));
+      text-align: center;
+    }
+    .pin-card-icon { font-size: 2.4rem; margin-bottom: var(--s-4); }
+    .pin-card h2 {
+      font-size: clamp(1.5rem, 1rem + 2vw, 2.4rem);
+      margin-bottom: var(--s-3);
+    }
+    .pin-card > p { color: var(--ink-soft); max-width: 44ch; margin-inline: auto; margin-bottom: 0; }
+    .pin-instructions {
+      list-style: none;
+      padding: 0;
+      margin: var(--s-6) auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+      max-width: 480px;
+      counter-reset: pstep;
+      text-align: left;
+    }
+    .pin-instructions li {
+      counter-increment: pstep;
+      display: flex;
+      align-items: center;
+      gap: var(--s-4);
+      background: var(--paper);
+      border: 1.5px solid var(--line);
+      border-radius: var(--r-md);
+      padding: var(--s-3) var(--s-5);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .pin-instructions li::before {
+      content: counter(pstep);
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--tomato-deep);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 0.75rem;
+      font-weight: 900;
+      flex: none;
+    }
+
+    /* ------------------------------------------------ Coffee section */
+    .coffee-section { text-align: center; }
+    .coffee-section .wrap { max-width: 680px; }
+    .coffee-section h2 { margin-bottom: var(--s-3); }
+    .coffee-section .lead {
+      max-width: 50ch;
+      margin-inline: auto;
+      margin-bottom: var(--s-7);
+    }
+    .btn--coffee {
+      --btn-bg: #f0a92c;
+      --btn-fg: #2a1c14;
+      box-shadow: 0 12px 24px -10px color-mix(in srgb, #c27e08 80%, #000);
+    }
+    .btn--coffee:hover {
+      background: #d98e10;
+      box-shadow: 0 18px 30px -10px color-mix(in srgb, #d98e10 72%, #000);
+    }
+    .coffee-note {
+      margin-top: var(--s-4);
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      margin-bottom: 0;
+    }
+
+    @keyframes toastIn {
+      from { opacity: 0; transform: translateX(calc(100% + 20px)); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes toastOut {
+      from { opacity: 1; transform: translateX(0); }
+      to   { opacity: 0; transform: translateX(calc(100% + 20px)); }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Pin toast — points up toward the Chrome extensions area (top-right toolbar) -->
+  <aside class="pin-toast" id="pin-toast" role="note" aria-label="Pin Pantry">
+    <div class="pin-toast-header">
+      <p class="pin-toast-title">Pin Pantry for quick access</p>
+      <button class="pin-toast-dismiss" id="pin-toast-dismiss" aria-label="Dismiss">&#x2715;</button>
+    </div>
+    <ol class="pin-steps">
+      <li><span class="sn">1</span> Click the puzzle piece icon in your toolbar</li>
+      <li><span class="sn">2</span> Find Pantry and click the pin icon next to it</li>
+    </ol>
+  </aside>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <img src="/assets/icon-128.png" alt="" width="34" height="34" />
+        Pantry
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#features">Features</a>
+          <a href="/support.html">Support</a>
+          <!-- TODO: replace this URL with your actual Buy Me a Coffee page -->
+          <a class="btn" href="https://www.buymeacoffee.com/pantry" target="_blank" rel="noopener">Buy us a coffee</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Welcome hero -->
+    <section class="install-hero">
+      <div class="wrap">
+        <div class="install-badge">&#x2713; Installation complete</div>
+        <h1>Welcome to Pantry</h1>
+        <p class="lead">Head to any recipe blog and Pantry jumps straight to the recipe — then helps you save it, annotate it, and much more.</p>
+        <div class="install-trust">
+          <span>No account needed</span>
+          <span>Works immediately</span>
+          <span>Packed with features</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pin the extension -->
+    <!-- <section class="pin-section">
+      <div class="wrap">
+        <div class="pin-card stitched">
+          <div class="pin-card-icon" aria-hidden="true">&#x1F4CC;</div>
+          <h2>One quick step: pin Pantry to your toolbar</h2>
+          <p>Pinning gives you one-click access to bookmark recipes and open your notes from any page.</p>
+          <ol class="pin-instructions">
+            <li>Click the puzzle piece &#x1F9E9; icon in the top-right of your browser</li>
+            <li>Find Pantry and click the pin icon next to it</li>
+            <li>The Pantry icon will appear in your toolbar &mdash; done!</li>
+          </ol>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Features — mirrored from the homepage -->
+    <section id="features">
+      <div class="wrap">
+        <!-- <p class="eyebrow">Why you'll love it</p> -->
+        <h2>Everything you wish recipe&nbsp;blogs did themselves.</h2>
+        <div class="feature-grid">
+          <article class="feature stitched">
+            <div class="ico" aria-hidden="true">&#x1F516;</div>
+            <h3>Yours forever</h3>
+            <p>Recipes save to your real Chrome bookmarks &mdash; not a SaaS database. They sync to mobile, search from the omnibox, and stay with you even if you uninstall Pantry.</p>
+          </article>
+          <article class="feature stitched">
+            <div class="ico" aria-hidden="true">&#x1F96C;</div>
+            <h3>Skip the story</h3>
+            <p>Auto-scrolls past the preamble straight to the recipe the moment the page loads. No hunting for the &ldquo;Jump to Recipe&rdquo; link.</p>
+          </article>
+          <article class="feature stitched">
+            <div class="ico" aria-hidden="true">&#x2705;</div>
+            <h3>One-click bookmark</h3>
+            <p>Saved into a tidy, alphabetically sorted &ldquo;Recipes&rdquo; folder. No manual filing, no mess &mdash; it stays organized for you.</p>
+          </article>
+          <article class="feature stitched">
+            <div class="ico" aria-hidden="true">&#x1F345;</div>
+            <h3>Ingredient cheat sheet</h3>
+            <p>Hover any ingredient in the instructions to see the full line &mdash; &ldquo;2 tbsp olive oil, divided&rdquo; &mdash; without scrolling back up to the list.</p>
+          </article>
+          <article class="feature stitched">
+            <div class="ico" aria-hidden="true">&#x1F4DD;</div>
+            <h3>Recipe notes</h3>
+            <p>A side panel for substitutions, tweaks, and what you&rsquo;d do differently next time. Auto-saves and syncs across your Chrome browsers.</p>
+          </article>
+          <article class="feature stitched">
+            <div class="ico" aria-hidden="true">&#x1F517;</div>
+            <h3>Deep links</h3>
+            <p>Bookmarks remember the recipe&rsquo;s exact position on the page, so revisiting jumps you right back to the good part.</p>
+          </article>
+        </div>
+           <div class="callout" style="margin-top:var(--s-7)">
+          <p>Got a feature request? Email us at <a href="mailto:support@pantry.cool">support@pantry.cool</a> — we read every email.</p>
+        </div>
+      </div>
+     
+    </section>
+
+    <!-- Buy us a coffee -->
+    <section class="coffee-section band-cream">
+      <div class="wrap">
+        <!-- <p class="eyebrow">Keep it free</p> -->
+        <h2>Pantry is free.<br /><span class="serif-ital">A coffee keeps it that way.</span></h2>
+        <p class="lead">No subscription, no ads, no data selling. If Pantry saves you time in the kitchen, buying us a coffee is the nicest way to say thanks &mdash; and it keeps the extension running and improving.</p>
+        <!-- TODO: replace this URL with your actual Buy Me a Coffee page -->
+        <a class="btn btn--lg btn--coffee" href="https://www.buymeacoffee.com/pantry" target="_blank" rel="noopener">
+          &#x2615; Buy us a coffee
+        </a>        
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="brand-col">
+        <a class="brand" href="/">
+          <img src="/assets/icon-128.png" alt="" width="34" height="34" />
+          Pantry
+        </a>
+        <p>The friendly way to skip the filler on recipe blogs &mdash; and keep the recipes you love. Free, and fair to the people who write them.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="https://chromewebstore.google.com/detail/recipe-box/lcfhmcjffbgobdkdhnmmglogcbfkccpc">Chrome Web Store</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>More</h4>
+        <ul>
+          <li><a href="/support.html">Support</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="mailto:hello@pantry.cool">hello@pantry.cool</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <span>&copy; <span data-year>2026</span> Pantry. Made for people who cook.</span>
+      <span>pantry.cool</span>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script>
+    (function () {
+      var toast = document.getElementById('pin-toast');
+      var dismiss = document.getElementById('pin-toast-dismiss');
+      if (!toast || !dismiss) return;
+      dismiss.addEventListener('click', function () {
+        toast.classList.add('dismissed');
+        toast.addEventListener('animationend', function () { toast.remove(); }, { once: true });
+      });
+    }());
+  </script>
+</body>
+</html>
